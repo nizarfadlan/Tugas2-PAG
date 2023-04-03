@@ -258,7 +258,7 @@ public class Tugas2 extends javax.swing.JFrame {
   private void garisLabel(String title, int xMargin, int yMargin) {
     Graphics g = canvas1.getGraphics();
     // Title
-    g.drawString(title, (canvas1.getWidth()/2)-(title.length()*3), 30);
+    g.drawString(title, (lb/2)-(title.length()*3), 30);
     
     // Label y
     for(int i = 0; i <= 5; i++) {
@@ -310,16 +310,15 @@ public class Tugas2 extends javax.swing.JFrame {
     Graphics g = canvas1.getGraphics();
     garisLabel("Sales Line Chart", xMargin, yMargin);
     
-    // Line bar
+    // Line
     int scale = (tg - 2 * yMargin) / maks;
-    int yValue = dataSales[0] * scale;
+    int yValue = 0;
     for(int i = 0; i < dataSales.length; i++) {
       int lineWidth = (lb / dataSales.length) - xMargin/2;
       int y2 = dataSales[i] * scale;
       
       // Line
       g.setColor(Color.red);
-      System.out.println("data-"+i+"=>"+x+","+(y-yValue)+","+(x+lineWidth)+","+(y-y2));
       g.drawLine(x, y - yValue, x + lineWidth, y - y2);
       
       // Fill Oval
